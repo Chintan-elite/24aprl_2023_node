@@ -22,3 +22,24 @@ function getCity()
 
 
 }
+
+function getCountries()
+{
+   fetch("https://restcountries.com/v3.1/all").then(data=>{
+    return data.json()
+   }).then(result=>{
+    
+        var rows = ""; //string
+        for(var i=0;i<result.length;i++)
+        {
+           
+            rows = rows+"<option value=>"+result[i].name.common+"</option>"
+
+
+        }
+        country.innerHTML=rows
+
+   }).catch(err=>{
+    console.log(err);
+   })
+}
