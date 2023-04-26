@@ -29,6 +29,10 @@ app.get("/about",(req,resp)=>{
     resp.render("about")
 })
 
+app.get("/myweather",(req,resp)=>{
+    resp.render("myweather")
+})
+
 app.get("/weather",(req,resp)=>{
 
     const location = req.query.location
