@@ -22,8 +22,16 @@
 
         <div class="input-group rounded mb-3">
           
-            <select name="country" id="country" class="form-control rounded">
+            <select name="country" id="country" class="form-control rounded" onchange="getStates(value)">
                 <option value="">---Select Country---</option>
+            </select> <br>
+
+             <select name="state" id="state" class="form-control rounded" onchange="getCities(value)">
+                <option value="">---Select state---</option>
+            </select> <br>
+
+               <select name="city1" id="city1" class="form-control rounded" onchange="getcurrentWeather(value)" >
+                <option value="">---Select city---</option>
             </select> <br>
         
         </div>
