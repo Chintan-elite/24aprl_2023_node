@@ -9,18 +9,8 @@ mongoose.connect(url).then(()=>{
     console.log("db connected !!!");
 })
 
-const Student = require("../model/Student")
-
-app.get("/students",async(req,resp)=>{
-
-    try {
-        const data = await Student.find();
-        resp.send(data)
-    } catch (error) {
-        resp.send(error)
-    }
-
-})
+app.use(express.json())
+app.use("/",require("../router/studentrouter"))
 
 app.listen(PORT,()=>{
     console.log("server running  on port : "+PORT);
