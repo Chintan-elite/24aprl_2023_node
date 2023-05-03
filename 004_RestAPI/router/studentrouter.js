@@ -62,8 +62,4 @@ router.get("/students/:id",async(req,resp)=>{
     }
 })
 
-
-
-
-
 module.exports=router
