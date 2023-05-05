@@ -13,7 +13,7 @@ app.use(express.json())
 app.use("/",require("../router/userrouter"))
 app.use("/",require("../router/categoryrouter"))
 app.use("/",require("../router/productrouter"))
-
+app.use("/",require("../router/cartrouter"))
 app.listen(PORT,()=>{
     console.log("server running  on port : "+PORT);
 })
