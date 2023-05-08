@@ -1,8 +1,9 @@
 const mongoose  =require("mongoose")
 const express = require("express")
 const app = express()
+require("dotenv").config()
 
-const PORT = 3000;
+const PORT = process.env.PORT || 9000
 const url = "mongodb+srv://chintantops:chintantops@cluster0.ytbhtsd.mongodb.net/eshop?retryWrites=true&w=majority"
 
 mongoose.connect(url).then(()=>{

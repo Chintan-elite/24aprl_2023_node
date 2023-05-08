@@ -1,6 +1,8 @@
 const router = require("express").Router()
 const User = require("../model/users")
 const bcrypt = require("bcryptjs")
+const jwt = require("jsonwebtoken")
+const auth = require("../middleware/auth")
 
 router.post("/users",async(req,resp)=>{
     try {
@@ -13,8 +15,9 @@ router.post("/users",async(req,resp)=>{
     }
 })
 
-router.get("/users",async(req,resp)=>{
+router.get("/users",auth,async(req,resp)=>{
     try {
+
         const data = await User.find()
         resp.send(data)
     } catch (error) {
@@ -30,7 +33,8 @@ router.post("/login",async (req,resp)=>{
         const valid = await bcrypt.compare(req.body.pass,udata.pass)
         if(valid)
         {
-            resp.send("welcome : "+udata.uname)
+            const token = await jwt.sign({_id:udata._id},"thisismysecrettokenkey");
+            resp.send("auth-token : "+token)
         }
         else
         {
@@ -43,7 +47,7 @@ router.post("/login",async (req,resp)=>{
 })
 
 
-router.delete("/users/:id",async(req,resp)=>{
+router.delete("/users/:id",auth,async(req,resp)=>{
 
     try {
             const delteddata = await User.findByIdAndDelete(req.params.id)
