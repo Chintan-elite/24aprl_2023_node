@@ -6,6 +6,7 @@ const auth = async(req,resp,next)=>{
     try {
         
         const mytoken = req.header("auth-token")
+        console.log(mytoken);
         const verifyToken = await jwt.verify(mytoken,"thisismysecrettokenkey")
 
         if(verifyToken)
