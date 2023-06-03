@@ -1,0 +1,50 @@
+SDLC : 
+
+product and project
+
+1 : requirement gathering
+BA : business analyst
+funcional
+non-functional
+
+2 : analysis
+SRS : software req. specification
+
+3 : designing
+Design document
+
+4 : development
+
+5 : Testing
+
+6 : maintanance
+
+********************************************************
+Abstract : 
+project name : E-shop
+
+admin :
+login
+category
+product
+view users
+view orders
+
+ 
+user : 
+registration
+login
+view product
+search product
+add to cart
+payment
+
+
+
+
+
+
+
+
+
+
